@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "3",
+    "jquery": "^3.3.1",
+    "vue": "^2.5.22"
+  },
+  "name": "day3",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "follow-redirects": "^1.6.1",
+    "is-buffer": "^1.1.6",
+    "ms": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

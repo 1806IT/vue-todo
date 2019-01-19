@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .del{
+            text-decoration: line-through;
+            color:#ccc !important;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-inverse ">
+        <div class="container-fluid ">
+            <div class="navbar-header ">
+                <a class="navbar-brand " href="#">
+                    ToDoList
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading ">
+                        <h3 class="text-danger text-center">有{{count}}件事情待完成</h3>
+                        <hr>
+                        <input type="text" v-model="Content" @keyup.enter="add()" class="form-control"><h5 class="pull-right warning">添加新任务</h5>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" :class="{active:hash=='all'}"><a href="#/all" >全部任务</a></li>
+                            <li role="presentation" :class="{active:hash=='unfinish'}"><a href="#/unfinish" >未完成</a></li>
+                            <li role="presentation" :class="{active:hash=='finish'}"><a href="#/finish" >已完成</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="(todo,index) in filterToDos" @dblclick="remember(todo,index)">
+                                <span :class="{del:todo.isSlected}"
+                                      v-show="cur!==todo"
+                                >
+                                    <input type="checkbox" v-model="todo.isSlected" >{{todo.title}}
+                                </span>
+                                <input type="text"
+                                       v-model="todo.title"
+                                       v-show="cur==todo"
+                                       @keyup.enter="cancel"
+                                       @blur="cancel"
+                                       v-focus="cur==todo"
+                                >
+                                <button class="pull-right btn-danger btn-xs" @click="remove(todo)">删除</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+
+<script src="./main.js"></script>
+</body>
+</html>
