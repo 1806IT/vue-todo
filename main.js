@@ -3,70 +3,42 @@ let app2=new Vue({
     el:'#app',
     data:{
         todos:[
-            {isSlected:false,title:'睡觉'},
-            {isSlected:false,title:'吃饭'}
+            {isSelected:true,title:'睡觉'},
+            {isSelected:true,title:'重做todo'},
+            {isSelected:true,title:'吃饭'},
         ],
-        Content:'',
+        content:'',
         flag:true,
-        cur:'',
-        hash:''
-     },
-    created(){
-      this.todos=JSON.parse(localStorage.getItem('data'))||this.todos
-        // 监控hash变化，如果页面以及有hash了，重新刷新页面也要获取hash值
-        this.hash=window.location.hash.slice(2)||'all'
-        window.addEventListener('hashchange',()=>{
-            console.log('hash has changed');
-            console.log(window.location.hash);
-            // 当hash变化，重新操作记录当数据
-            this.hash=window.location.hash.slice(2)
-        },false)
+        cur:''
     },
-    watch:{
-        todos:{
-            handler(){
-                localStorage.setItem('data',JSON.stringify(this.todos))
-            },deep:true
+    created(){
+
+    },
+    methods:{
+        remove(todo){
+            this.todos=this.todos.filter(item=>item!==todo)
+        },
+        add(){
+            console.log('enter add new test');
+            this.todos.push({isSelected:false,title:this.content})
+            this.content=''
+        },
+        change(todo ){
+            this.cur=todo
+        },
+        detail(){
+            console.log('展示细节')
+        },
+        remember(){
+            this.cur=''
         }
     },
     directives:{
         focus(el,bindings){
+            console.log(bindings)
             if(bindings.value){
-                el.focus()//获取焦点
+                el.focus()
             }
         }
-    },
-    methods:{
-        add(){
-            console.log('enter');
-            this.todos.push({isSlected:false,title:this.Content})
-            this.Content=''
-        },
-        remove(todo){
-            this.todos=this.todos.filter(item=>item!==todo)
-        },
-        remember(todo,index){
-            this.cur=todo
-        },
-        cancel(){
-            console.log('撤出');
-            this.cur=''
-        }
-    },
-    computed:{
-        count(){
-            // console.log('进入计算属性')
-            let b=this.todos.filter(item=>item.isSlected==false).length
-            return b
-        },
-        filterToDos(){
-            if(this.hash==='all') return this.todos
-            if(this.hash=='finish') return this.todos.filter(item=>item.isSlected===true)
-            if(this.hash=='unfinish') return this.todos.filter(item=>item.isSlected===false)
-            return this.todos
-        }
-    },
-    components:{
-
     }
 })

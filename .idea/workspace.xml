@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74fbd19b-422d-463e-8729-01f4cb7a184b" name="Default Changelist" comment="" />
+    <list default="true" id="74fbd19b-422d-463e-8729-01f4cb7a184b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo2.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo2.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,23 +16,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.80532444">
+    <splitter split-orientation="horizontal" split-proportion="0.80116475">
       <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/todo2.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="40" column="90" selection-start-line="40" selection-start-column="90" selection-end-line="40" selection-end-column="90" />
+                <state relative-caret-position="262">
+                  <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="298">
-                  <caret line="61" column="19" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="19" />
+                <state relative-caret-position="193">
+                  <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -49,8 +53,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/todo2.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="93">
-                  <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+                <state relative-caret-position="34">
+                  <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
                 </state>
               </provider>
             </entry>
@@ -58,8 +62,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="38" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -76,6 +80,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -85,11 +92,12 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="625" />
-    <option name="y" value="369" />
+    <option name="x" value="494" />
+    <option name="y" value="172" />
     <option name="width" value="1223" />
     <option name="height" value="753" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -100,13 +108,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="day3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="day3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="day3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="day3" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="day3todo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="day3todo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,12 +160,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547859799833</updated>
-      <workItem from="1547859801903" duration="18445000" />
+      <workItem from="1547859801903" duration="18977000" />
+      <workItem from="1547945966354" duration="4949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18445000" />
+    <option name="totallyTimeSpent" value="23926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -174,13 +178,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="170" y="188" width="1223" height="753" extended-state="0" />
+    <frame x="494" y="172" width="1223" height="753" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.24958402" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.25113463" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.25113463" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -207,17 +212,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/todo2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="61" column="19" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="19" />
+        <state relative-caret-position="262">
+          <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo2.html">
+    <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="40" column="90" selection-start-line="40" selection-start-column="90" selection-end-line="40" selection-end-column="90" />
+        <state relative-caret-position="193">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>

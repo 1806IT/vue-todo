@@ -27,31 +27,47 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading ">
-                        <h3 class="text-danger text-center">有{{count}}件事情待完成</h3>
+                        <h3 class="text-danger text-center">有count件事情待完成</h3>
                         <hr>
-                        <input type="text" v-model="Content" @keyup.enter="add()" class="form-control"><h5 class="pull-right warning">添加新任务</h5>
+                        <input type="text"  class="form-control" v-model='content' @keyup.enter="add">
+                        <button class="btn-warning pull-right btn-xs" @click="add">添加新任务</button>
                         <ul class="nav nav-pills">
-                            <li role="presentation" :class="{active:hash=='all'}"><a href="#/all" >全部任务</a></li>
-                            <li role="presentation" :class="{active:hash=='unfinish'}"><a href="#/unfinish" >未完成</a></li>
-                            <li role="presentation" :class="{active:hash=='finish'}"><a href="#/finish" >已完成</a></li>
+                            <li role="presentation"><a href="#" >全部任务</a></li>
+                            <li role="presentation"><a href="#" >未完成</a></li>
+                            <li role="presentation"><a href="#" >已完成</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
                         <ul class="list-group">
-                            <li class="list-group-item" v-for="(todo,index) in filterToDos" @dblclick="remember(todo,index)">
-                                <span :class="{del:todo.isSlected}"
-                                      v-show="cur!==todo"
-                                >
-                                    <input type="checkbox" v-model="todo.isSlected" >{{todo.title}}
+                            <li class='list-group-item' v-for="(todo ,index) in todos"
+                                @dblclick="change(todo)"
+                            >
+                                <span v-show='cur!==todo'>
+                                    <input type="checkbox" v-model="todo.isSelected">{{todo.title}}
+
                                 </span>
                                 <input type="text"
-                                       v-model="todo.title"
-                                       v-show="cur==todo"
-                                       @keyup.enter="cancel"
-                                       @blur="cancel"
-                                       v-focus="cur==todo"
+                                       v-show="cur==todo" v-model="todo.title" v-focus="cur==todo"
+                                    @blur="remember" @keyup.enter="remember"
                                 >
-                                <button class="pull-right btn-danger btn-xs" @click="remove(todo)">删除</button>
+                                <button
+                                        class="btn btn-danger pull-right btn-xs"
+                                        @click="remove(todo)"
+                                >
+                                    删除
+                                </button>
+                                <button
+                                        class="btn btn-info pull-right btn-xs"
+                                        @click="remove(detail)"
+                                >
+                                    详情
+                                </button>
+                                <button
+                                        class="btn btn-warning pull-right btn-xs"
+                                        @click="change(todo)"
+                                >
+                                    编辑
+                                </button>
                             </li>
                         </ul>
                     </div>
