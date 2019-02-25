@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <title>todo</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <style>
-        .del{
-            text-decoration: line-through;
-            color:#ccc !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div id="app">
@@ -27,22 +22,21 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading ">
-                        <h3 class="text-danger text-center">有count件事情待完成</h3>
+                        <h3 class="text-danger text-center">有{{count}}件事情待完成</h3>
                         <hr>
-                        <input type="text"  class="form-control" v-model='content' @keyup.enter="add">
-                        <button class="btn-warning pull-right btn-xs" @click="add">添加新任务</button>
+                        <input type="text"  class="form-control" v-model='content' 
+                        @keyup.enter="add" placeholder="请输入需要记录的事件,以回车或提交按钮提交">
+                        <button class="btn-warning pull-right btn-xs" @click="add">提交</button>
                         <ul class="nav nav-pills">
-                            <li role="presentation"><a href="#" >全部任务</a></li>
-                            <li role="presentation"><a href="#" >未完成</a></li>
-                            <li role="presentation"><a href="#" >已完成</a></li>
+                            <li role="presentation" :class="{active:hash=='all'}"><a href="#/all" >全部任务</a></li>
+                            <li role="presentation" :class="{active:hash=='unfinish'}"><a href="#/unfinish" >未完成</a></li>
+                            <li role="presentation" :class="{active:hash=='finish'}"><a href="#/finish" >已完成</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
                         <ul class="list-group">
-                            <li class='list-group-item' v-for="(todo ,index) in todos"
-                                @dblclick="change(todo)"
-                            >
-                                <span v-show='cur!==todo'>
+                            <li class='list-group-item' v-for="(todo ,index) in filterToDos">
+                                <span v-show='cur!==todo' :class="{del:todo.isSelected}" @dblclick="change(todo)">
                                     <input type="checkbox" v-model="todo.isSelected">{{todo.title}}
 
                                 </span>
@@ -56,12 +50,12 @@
                                 >
                                     删除
                                 </button>
-                                <button
-                                        class="btn btn-info pull-right btn-xs"
-                                        @click="remove(detail)"
-                                >
+                               <!-- <button class="btn btn-info pull-right btn-xs"
+                                        @click="detail(todo)">
                                     详情
-                                </button>
+                                </button>-->
+
+                               <detail class="mask" :show="flag"></detail>
                                 <button
                                         class="btn btn-warning pull-right btn-xs"
                                         @click="change(todo)"
@@ -71,13 +65,27 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="panel-footer"></div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+<template id="del">
+    <div>
+        <button class="btn btn-warning btn-xs" @click="close">关闭</button>
+        <div class="panel panel-primary">{{todo.title}}</div>
+        <div class="panel panel-success">
+            创建时间:{{todo.startDate}}
+            <hr>
+            细节：
+            {{todo.todoDetail}}
+            <br>
+            完成进度:{{todo.schedule}}%
+        </div>
+    </div>
+</template>
 <script src="node_modules/vue/dist/vue.js"></script>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/axios/dist/axios.js"></script>

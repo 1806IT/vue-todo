@@ -1,0 +1,13 @@
+.del{
+    text-decoration: line-through;
+    color:#ccc !important;
+}
+.mask{
+    position: fixed;
+    top:20%;
+    right: 5%;
+    height: 70%;
+    width:30%;
+    border: 1px solid grey;
+    background: #C1A05C;
+}
